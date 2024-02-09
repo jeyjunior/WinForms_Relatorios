@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/08/2024 20:11:54" ReportInfo.Modified="02/08/2024 20:57:21" ReportInfo.CreatorVersion="2024.1.3.0">
+  <Dictionary>
+    <Parameter Name="nome" DataType="System.String" AsString=""/>
+    <Parameter Name="email" DataType="System.String" AsString=""/>
+    <Parameter Name="Parameter" DataType="System.String" AsString=""/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="lblRelatorio" Left="113.4" Width="491.4" Height="37.8" Text="Relatório" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35"/>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="85.05">
+      <TextObject Name="lblNome" Left="113.4" Width="75.6" Height="28.35" Text="Nome:" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text1" Left="113.4" Top="37.8" Width="75.6" Height="28.35" Text="E-mail:" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text2" Left="198.45" Width="406.35" Height="28.35" Text="[nome]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="198.45" Top="37.8" Width="406.35" Height="28.35" Text="[email]" VertAlign="Center" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="163.2" Width="718.2" Height="28.35">
+      <TextObject Name="Text4" Left="37.8" Width="94.5" Height="28.35" Text="[Date]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="633.15" Width="103.95" Height="28.35" Text="[Page]" Font="Arial, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
