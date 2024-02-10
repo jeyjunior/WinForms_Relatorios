@@ -66,6 +66,7 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Registro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmPrincipal.resx">
@@ -97,9 +98,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Teste\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
