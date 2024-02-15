@@ -69,5 +69,20 @@ namespace WinForms_Relatorios.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Contato&gt;
+        ///  &lt;Tipo&gt;1&lt;/Tipo&gt;
+        ///  &lt;TituloTipo&gt;Descricao&lt;/TituloTipo&gt;
+        ///  &lt;Nome&gt;João da Silva&lt;/Nome&gt;
+        ///  &lt;Email&gt;joao@example.com&lt;/Email&gt;
+        ///&lt;/Contato&gt;
+        ///.
+        /// </summary>
+        internal static string Usuario {
+            get {
+                return ResourceManager.GetString("Usuario", resourceCulture);
+            }
+        }
     }
 }

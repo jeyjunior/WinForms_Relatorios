@@ -25,6 +25,10 @@ namespace WinForms_Relatorios
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
+            GerarRelatorio_NomeEmail();
+        }
+        private void btnRelatorioCompleto_Click(object sender, EventArgs e)
+        {
             GerarRelatorio_ListaNomeEmail();
         }
 
@@ -33,18 +37,19 @@ namespace WinForms_Relatorios
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_NomeEmail.frx");
             Report report = Report.FromFile(filePath);
 
-            report.SetParameterValue("nome", "Gabriela Moraes");
-            report.SetParameterValue("email", "gabriela.moraes@email.com.br");
+            report.SetParameterValue("nome", "Nome do usuário");
+            report.SetParameterValue("email", "nome.usuario@email.com.br");
 
             report.Prepare();
 
-            using (var pdfExport = new PDFSimpleExport())
-            using (var mStream = new MemoryStream())
-            {
-                pdfExport.Export(report, mStream);
+            string pdfFilePath = @"Relatorios\Relatorio_NomeEmail.PDF";
 
-                File.WriteAllBytes(@"Relatorios\Relatorio_NomeEmail.PDF", mStream.ToArray());
+            using (var pdfExport = new PDFSimpleExport())
+            {
+                pdfExport.Export(report, pdfFilePath);
             }
+
+            Process.Start(pdfFilePath);
         }
 
         private void GerarRelatorio_ListaNomeEmail()
@@ -52,61 +57,29 @@ namespace WinForms_Relatorios
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_ListaNomeEmail.frx");
             Report report = Report.FromFile(filePath);
 
-            var lista = new List<Usuario>
-            {
-                new Usuario() { Tipo = 1, TituloTipo = "Tipo 1", Nome = "Nome do usuário", Email = "nome.usuarop@email.com" },
-                new Usuario() { Tipo = 1, TituloTipo = "Tipo 1", Nome = "Nome do usuário", Email = "nome.usuarop@email.com" },
-                new Usuario() { Tipo = 1, TituloTipo = "Tipo 1", Nome = "Nome do usuário", Email = "nome.usuarop@email.com" },
-                new Usuario() { Tipo = 1, TituloTipo = "Tipo 1", Nome = "Nome do usuário", Email = "nome.usuarop@email.com" },
-                new Usuario() { Tipo = 1, TituloTipo = "Tipo 1", Nome = "Nome do usuário", Email = "nome.usuarop@email.com" }
-            };
-
             DataTable dt = new DataTable();
             dt.Columns.Add("Tipo", typeof(int));
             dt.Columns.Add("TituloTipo", typeof(string));
             dt.Columns.Add("Nome", typeof(string));
             dt.Columns.Add("Email", typeof(string));
 
-            foreach (var usuario in lista)
-            {
-                dt.Rows.Add(usuario.Tipo, usuario.TituloTipo, usuario.Nome, usuario.Email);
-            }
+            dt.Rows.Add(1, "Tipo 1", "Nome do usuário 1", "nome.usuario_1@email.com");
+            dt.Rows.Add(1, "Tipo 1", "Nome do usuário 1", "nome.usuario_1@email.com");
+            dt.Rows.Add(2, "Tipo 2", "Nome do usuário 2", "nome.usuario_2@email.com");
+            dt.Rows.Add(2, "Tipo 2", "Nome do usuário 2", "nome.usuario_2@email.com");
+            dt.Rows.Add(3, "Tipo 3", "Nome do usuário 3", "nome.usuario_3@email.com");
 
             report.RegisterData(dt, "Usuario");
             report.Prepare();
 
-            string pdfFilePath = @"Relatorios\Relatorio_ListaNomeEmail.PDF"; // Caminho do arquivo PDF
+            string pdfFilePath = @"Relatorios\Relatorio_ListaNomeEmail.PDF"; 
 
             using (var pdfExport = new PDFSimpleExport())
             {
                 pdfExport.Export(report, pdfFilePath);
             }
 
-            // Abrir o PDF após salvar
             Process.Start(pdfFilePath);
         }
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtEmail.Text))
-                return;
-
-            registros.Add(new Registro { Nome = txtNome.Text.Trim(), Email = txtEmail.Text.Trim() });
-
-            dtgPrincipal.DataSource = registros.Select(i => new
-            {
-                Nome = i.Nome,
-                Email = i.Email,
-            })
-                .ToList();
-        }
     }
-}
-
-public class Usuario
-{
-    public int Tipo { get; set; }
-    public string TituloTipo { get; set; }
-    public string Nome { get; set; }
-    public string Email { get; set; }
 }
