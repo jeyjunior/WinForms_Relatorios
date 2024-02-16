@@ -63,20 +63,30 @@ namespace WinForms_Relatorios.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Relatorio_ListaNomeEmail {
+        internal static byte[] Relatorio_ICollection {
             get {
-                object obj = ResourceManager.GetObject("Relatorio_ListaNomeEmail", resourceCulture);
+                object obj = ResourceManager.GetObject("Relatorio_ICollection", resourceCulture);
                 return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;Contato&gt;
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Relatorio_Table {
+            get {
+                object obj = ResourceManager.GetObject("Relatorio_Table", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Usuario&gt;
         ///  &lt;Tipo&gt;1&lt;/Tipo&gt;
         ///  &lt;TituloTipo&gt;Descricao&lt;/TituloTipo&gt;
         ///  &lt;Nome&gt;João da Silva&lt;/Nome&gt;
         ///  &lt;Email&gt;joao@example.com&lt;/Email&gt;
-        ///&lt;/Contato&gt;
+        ///&lt;/Usuario&gt;
         ///.
         /// </summary>
         internal static string Usuario {

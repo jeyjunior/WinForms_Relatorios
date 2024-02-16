@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report BaseReport="..\..\..\..\..\..\..\Downloads\FastReport.Community.2024.1.3\Cabecalho.frx" BaseReportAbsolutePath="..\..\..\..\..\..\..\Downloads\FastReport.Community.2024.1.3\Cabecalho.frx" ScriptLanguage="CSharp" ReportInfo.Created="02/15/2024 19:45:51" ReportInfo.Modified="02/15/2024 20:18:44" ReportInfo.CreatorVersion="2024.1.3.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="Usuario" ReferenceName="Usuario" DataType="System.Collections.Generic.List`1[[System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" Enabled="true">
+      <Column Name="Ativo" DataType="System.Boolean"/>
+      <Column Name="ID" DataType="System.Int32"/>
+      <Column Name="DataRegistro" DataType="System.DateTime"/>
+      <Column Name="Descricao" DataType="System.String"/>
+      <Column Name="ObjetoUsuario" DataType="System.Object"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="28.35">
+      <TextObject Name="Text11" Width="718.2" Height="28.35" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="32.35" Width="718.2" Height="37.8" Condition="[Usuario.DataRegistro]">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="[Usuario.DataRegistro]" Format="Date" Format.Format="d" VertAlign="Center" Font="Arial, 10pt"/>
+      <LineObject Name="Line7" Top="37.8" Width="727.65"/>
+      <DataBand Name="Data1" Top="97.05" Width="718.2" Height="28.35" DataSource="Usuario">
+        <TextObject Name="Text2" Width="75.6" Height="28.35" Text="[Usuario.Ativo]" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text4" Left="94.5" Width="103.95" Height="28.35" Text="[Usuario.ID]" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text5" Left="217.35" Width="160.65" Height="28.35" Text="[Usuario.Descricao]" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text6" Left="396.9" Width="321.3" Height="28.35" Text="[Usuario.ObjetoUsuario]" VertAlign="Center" Font="Arial, 10pt"/>
+        <LineObject Name="Line1" Left="85.05" Height="28.35"/>
+        <LineObject Name="Line2" Left="207.9" Height="28.35"/>
+        <LineObject Name="Line3" Left="387.45" Height="28.35"/>
+        <LineObject Name="Line4" Top="28.35" Width="718.2" Border.Color="DarkGray"/>
+        <DataHeaderBand Name="DataHeader1" Top="74.15" Width="718.2" Height="18.9">
+          <TextObject Name="Text7" Width="75.6" Height="18.9" Text="Ativo" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TextObject Name="Text8" Left="94.5" Width="103.95" Height="18.9" Text="ID" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TextObject Name="Text9" Left="217.35" Width="160.65" Height="18.9" Text="Descrição" Font="Arial, 10pt, style=Bold"/>
+          <TextObject Name="Text10" Left="396.9" Width="321.3" Height="18.9" Text="Objeto Usuário" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <LineObject Name="Line6" Top="18.9" Width="727.65"/>
+        </DataHeaderBand>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="129.4" Width="718.2" Height="37.8">
+        <LineObject Name="Line5" Width="718.2"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="171.2" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

@@ -17,24 +17,15 @@ namespace WinForms_Relatorios
 {
     public partial class FrmPrincipal : Form
     {
-        private List<Registro> registros = new List<Registro>();
         public FrmPrincipal()
         {
             InitializeComponent();
         }
 
-        private void btnRelatorio_Click(object sender, EventArgs e)
+        #region Metodos
+        private void GerarRelatorio_Parametros()
         {
-            GerarRelatorio_NomeEmail();
-        }
-        private void btnRelatorioCompleto_Click(object sender, EventArgs e)
-        {
-            GerarRelatorio_ListaNomeEmail();
-        }
-
-        private void GerarRelatorio_NomeEmail()
-        {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_NomeEmail.frx");
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_Parametros.frx");
             Report report = Report.FromFile(filePath);
 
             report.SetParameterValue("nome", "Nome do usuário");
@@ -42,7 +33,7 @@ namespace WinForms_Relatorios
 
             report.Prepare();
 
-            string pdfFilePath = @"Relatorios\Relatorio_NomeEmail.PDF";
+            string pdfFilePath = @"Relatorios\Relatorio_Parametros.PDF";
 
             using (var pdfExport = new PDFSimpleExport())
             {
@@ -52,9 +43,9 @@ namespace WinForms_Relatorios
             Process.Start(pdfFilePath);
         }
 
-        private void GerarRelatorio_ListaNomeEmail()
+        private void GerarRelatorio_Table()
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_ListaNomeEmail.frx");
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_Table.frx");
             Report report = Report.FromFile(filePath);
 
             DataTable dt = new DataTable();
@@ -72,7 +63,7 @@ namespace WinForms_Relatorios
             report.RegisterData(dt, "Usuario");
             report.Prepare();
 
-            string pdfFilePath = @"Relatorios\Relatorio_ListaNomeEmail.PDF"; 
+            string pdfFilePath = @"Relatorios\Relatorio_Table.PDF"; 
 
             using (var pdfExport = new PDFSimpleExport())
             {
@@ -81,5 +72,49 @@ namespace WinForms_Relatorios
 
             Process.Start(pdfFilePath);
         }
+
+        private void GerarRelatorio_ICollection()
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_ICollection.frx");
+            Report report = Report.FromFile(filePath);
+
+            var lista = new List<object>()
+            {
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = new { Nome = "Yara", Idade = 21 } },
+                new {Ativo = true, ID = 1001, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1001", ObjetoUsuario = new { Nome = "Junior", Idade = 25 } },
+                new {Ativo = false, ID = 1002, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1002", ObjetoUsuario = new { Nome = "Jessica", Idade = 33 } },
+                new {Ativo = false, ID = 1003, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1003", ObjetoUsuario = new { Nome = "Vanessa", Idade = 19 } },
+            };
+
+            report.RegisterData(lista, "Usuario");
+            report.Prepare();
+
+            string pdfFilePath = @"Relatorios\Relatorio_ICollection.PDF";
+
+            using (var pdfExport = new PDFSimpleExport())
+            {
+                pdfExport.Export(report, pdfFilePath);
+            }
+
+            Process.Start(pdfFilePath);
+        }
+        #endregion
+
+        #region Eventos
+        private void btnRelatorioParametros_Click(object sender, EventArgs e)
+        {
+            GerarRelatorio_Parametros();
+        }
+
+        private void btnRelatorioTable_Click(object sender, EventArgs e)
+        {
+            GerarRelatorio_Table();
+        }
+
+        private void btnRelatorioICollection_Click(object sender, EventArgs e)
+        {
+            GerarRelatorio_ICollection();
+        }
+        #endregion
     }
 }
