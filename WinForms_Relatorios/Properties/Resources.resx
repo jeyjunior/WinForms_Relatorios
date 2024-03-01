@@ -121,6 +121,9 @@
   <data name="Relatorio_ICollection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Relatorios\Relatorio_ICollection.frx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Relatorio_MultICollection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Relatorios\Relatorio_MultICollection.frx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Relatorio_Table" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Relatorios\Relatorio_Table.frx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

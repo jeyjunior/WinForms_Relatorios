@@ -42,7 +42,6 @@ namespace WinForms_Relatorios
 
             Process.Start(pdfFilePath);
         }
-
         private void GerarRelatorio_Table()
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_Table.frx");
@@ -72,7 +71,6 @@ namespace WinForms_Relatorios
 
             Process.Start(pdfFilePath);
         }
-
         private void GerarRelatorio_ICollection()
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_ICollection.frx");
@@ -98,6 +96,70 @@ namespace WinForms_Relatorios
 
             Process.Start(pdfFilePath);
         }
+        private void GerarRelatorio_MultICollection()
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Relatorios\Relatorio_MultICollection.frx");
+            Report report = Report.FromFile(filePath);
+
+            var lista = new List<object>()
+            {
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today, Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+                new {Ativo = true, ID = 1000, DataRegistro = DateTime.Today.AddDays(-10), Descricao = "Descrição do usuário 1000", ObjetoUsuario = "" },
+            };
+
+            report.RegisterData(lista, "Usuario");
+            report.Prepare();
+
+            string pdfFilePath = @"Relatorios\Relatorio_MultICollection.PDF";
+
+            using (var pdfExport = new PDFSimpleExport())
+            {
+                pdfExport.Export(report, pdfFilePath);
+            }
+
+            Process.Start(pdfFilePath);
+        }
         #endregion
 
         #region Eventos
@@ -105,15 +167,17 @@ namespace WinForms_Relatorios
         {
             GerarRelatorio_Parametros();
         }
-
         private void btnRelatorioTable_Click(object sender, EventArgs e)
         {
             GerarRelatorio_Table();
         }
-
         private void btnRelatorioICollection_Click(object sender, EventArgs e)
         {
             GerarRelatorio_ICollection();
+        }
+        private void btnTeste_Click(object sender, EventArgs e)
+        {
+            GerarRelatorio_MultICollection();
         }
         #endregion
     }

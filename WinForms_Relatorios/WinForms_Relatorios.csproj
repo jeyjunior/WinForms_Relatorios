@@ -97,6 +97,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Relatorios\Relatorio_ICollection.frx" />
+    <None Include="Relatorios\Relatorio_MultICollection.frx" />
     <None Include="Relatorios\Relatorio_Table.frx" />
   </ItemGroup>
   <ItemGroup>
