@@ -31,7 +31,7 @@
             this.btnRelatorioParametros = new System.Windows.Forms.Button();
             this.btnRelatorioTable = new System.Windows.Forms.Button();
             this.btnRelatorioICollection = new System.Windows.Forms.Button();
-            this.btnTeste = new System.Windows.Forms.Button();
+            this.btnBase = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRelatorioParametros
@@ -64,22 +64,22 @@
             this.btnRelatorioICollection.UseVisualStyleBackColor = true;
             this.btnRelatorioICollection.Click += new System.EventHandler(this.btnRelatorioICollection_Click);
             // 
-            // btnTeste
+            // btnBase
             // 
-            this.btnTeste.Location = new System.Drawing.Point(390, 12);
-            this.btnTeste.Name = "btnTeste";
-            this.btnTeste.Size = new System.Drawing.Size(121, 46);
-            this.btnTeste.TabIndex = 7;
-            this.btnTeste.Text = "Teste";
-            this.btnTeste.UseVisualStyleBackColor = true;
-            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            this.btnBase.Location = new System.Drawing.Point(390, 12);
+            this.btnBase.Name = "btnBase";
+            this.btnBase.Size = new System.Drawing.Size(121, 46);
+            this.btnBase.TabIndex = 7;
+            this.btnBase.Text = "Inicializar Base";
+            this.btnBase.UseVisualStyleBackColor = true;
+            this.btnBase.Click += new System.EventHandler(this.btnBase_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 139);
-            this.Controls.Add(this.btnTeste);
+            this.Controls.Add(this.btnBase);
             this.Controls.Add(this.btnRelatorioICollection);
             this.Controls.Add(this.btnRelatorioTable);
             this.Controls.Add(this.btnRelatorioParametros);
@@ -94,7 +94,7 @@
         private System.Windows.Forms.Button btnRelatorioParametros;
         private System.Windows.Forms.Button btnRelatorioTable;
         private System.Windows.Forms.Button btnRelatorioICollection;
-        private System.Windows.Forms.Button btnTeste;
+        private System.Windows.Forms.Button btnBase;
     }
 }
 
