@@ -66,7 +66,7 @@ namespace WinForms_Relatorios.Controls.Database
                 transaction.Commit();
             }
         }
-        public List<Usuario> ConsultarUsuarios()
+        public IEnumerable<Usuario> ConsultarUsuarios()
         {
             var usuarios = new List<Usuario>();
             using (var command = new SQLiteCommand("SELECT * FROM Usuario", connection))
