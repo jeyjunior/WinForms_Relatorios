@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="03/02/2024 15:41:56" ReportInfo.Modified="03/03/2024 10:53:46" ReportInfo.CreatorVersion="2024.1.3.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/02/2024 15:41:56" ReportInfo.Modified="03/03/2024 14:07:29" ReportInfo.CreatorVersion="2024.1.3.0">
   <ScriptText>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,16 +33,18 @@ namespace FastReport
         
         Table1.PrintColumn(0);
       }
-      
+
       while(usuarios.HasMoreRows)
       {
         Table1.PrintRow(1);
         
         for (int i = 0; i &lt; qtdColunas; i++)
         {
-          Cell2.Text = usuarios[usuarios.Columns[i].ToString();
+         Cell6.Text = usuarios[usuarios.Columns[i]].ToString();
           Table1.PrintColumn(0);
-        }
+       }
+        
+        usuarios.Next();
       }
       
     }
@@ -50,7 +52,7 @@ namespace FastReport
 }
 </ScriptText>
   <Dictionary>
-    <SQLiteDataConnection Name="Connection" ConnectionString="rijcmlqmeM1mB1pCnZ9KE8gJh62KByf8mBjB5RIMt51lXbzIMJS7trgYhDJHqw88lGqwx+6w2WRwTf8ud09oL9hnHKI9cAXZjs+SSo0sauF7c4khChMg8r6GQOttEmKhuDSBSdURayrIqn5Gu2r1HBGBOwHfg==">
+    <SQLiteDataConnection Name="Connection" ConnectionString="rijcmlqmeM1mB1pCnZ9KE8gJh62KByf8mBjB5RIMt51lXbzIMJS7trgYhDJHqw88lGqwx+6w2WRwTf8ud09oL9hnHKI9cAXZjs+SSo0sauF7c4khChMg8r6GQOttEmKhuDSBSdUmdLyMCCbc+EMi+3wb8oIKQ==">
       <TableDataSource Name="Usuario" DataType="System.Int32" Enabled="true" TableName="Usuario">
         <Column Name="PK_Usuario" DataType="System.Int64"/>
         <Column Name="Nome" DataType="System.String"/>
@@ -61,9 +63,9 @@ namespace FastReport
   </Dictionary>
   <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
     <PageHeaderBand Name="PageHeader1" Width="718.2" Height="28.35"/>
-    <DataBand Name="Data1" Top="32.35" Width="718.2" Height="66.16" DataSource="Usuario">
-      <TableObject Name="Table1" Left="9.45" Width="66.15" Height="66.16" ManualBuildEvent="Table1_ManualBuild">
-        <TableColumn Name="Column1"/>
+    <DataBand Name="Data1" Top="32.35" Width="718.2" Height="66.16">
+      <TableObject Name="Table1" Left="9.45" Width="160.65" Height="66.16" ManualBuildEvent="Table1_ManualBuild">
+        <TableColumn Name="Column1" Width="160.65"/>
         <TableRow Name="Row1" Height="33.08">
           <TableCell Name="Cell1" Text="Nome" Font="Arial, 10pt"/>
         </TableRow>
