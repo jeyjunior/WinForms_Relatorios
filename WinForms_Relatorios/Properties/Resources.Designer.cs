@@ -73,9 +73,9 @@ namespace WinForms_Relatorios.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Relatorio_MultICollection {
+        internal static byte[] Relatorio_TabelaDinamica_Ex1 {
             get {
-                object obj = ResourceManager.GetObject("Relatorio_MultICollection", resourceCulture);
+                object obj = ResourceManager.GetObject("Relatorio_TabelaDinamica_Ex1", resourceCulture);
                 return ((byte[])(obj));
             }
         }

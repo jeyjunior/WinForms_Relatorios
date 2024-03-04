@@ -111,6 +111,8 @@ namespace WinForms_Relatorios
             //return;
             var baseDados = new DBSQLite();
             //baseDados.AddTabelaUsuario();
+
+            // Base de dados configurada para utilizar no FastReport 
         }
         #endregion
     }
